@@ -6,7 +6,7 @@ const myStyle= {
 };
 
 const Index = ({pokemon}) => {
-    console.log(pokemon, "hello")
+    // console.log(pokemon, "hello")
   return (
     <div style={myStyle}>
         <h1>See all the Pokemon!!</h1>
