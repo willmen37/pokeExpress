@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-// const pokemon = require("./views/Index");
+const pokemons = require("./models/pokemon");
 const PORT = 3000;
 
 //load engine
@@ -16,7 +16,11 @@ app.get("/",(req, res)=>{
 })
 
 app.get("/pokemon", (req,res)=>{
-    res.render("index");
+    res.render("Index", {pokemon: pokemons});
+})
+
+app.get("/pokemon/:index", (req,res)=>{
+    res.render("Show", {pokemon: pokemons[req.params.index]});
 })
 
 app.listen(PORT, (req,res)=>{

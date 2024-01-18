@@ -5,10 +5,19 @@ const myStyle= {
     backgroundColor: "#000000"
 };
 
-const Index = () => {
+const Index = ({pokemon}) => {
+    console.log(pokemon, "hello")
   return (
     <div style={myStyle}>
         <h1>See all the Pokemon!!</h1>
+        <ul>
+          {pokemon.map((pokemon, i) => (
+            
+            <li key={i}><a href={`/pokemon/${i}`}>{pokemon.name}</a></li>
+            
+          ))}
+        </ul>
+        
     </div>
   )
 }
